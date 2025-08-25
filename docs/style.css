@@ -46,6 +46,10 @@ th {
 	border-bottom: 2px solid #00eaff;
 }
 
+th[colspan] {
+	text-align: center;
+}
+
 tr:nth-child(even) {
 	background: #23272f;
 }
