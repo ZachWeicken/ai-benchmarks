@@ -1,0 +1,96 @@
+
+body {
+	font-family: 'Fira Mono', 'Consolas', 'Menlo', monospace;
+	background: #181a20;
+	color: #e0e0e0;
+	margin: 0;
+	padding: 2em;
+}
+
+h1 {
+	color: #00eaff;
+	letter-spacing: 1px;
+	font-weight: 600;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 1em;
+	background: #23272f;
+	box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+	border-radius: 8px;
+	overflow-x: auto;
+}
+
+caption {
+	font-size: 1.2em;
+	margin-bottom: 0.5em;
+	color: #00eaff;
+	font-weight: 500;
+}
+
+th, td {
+	border: 1px solid #2c313c;
+	padding: 10px 8px;
+	text-align: left;
+	font-size: 0.95em;
+}
+
+th {
+	background: #23272f;
+	color: #00eaff;
+	font-weight: 600;
+	border-bottom: 2px solid #00eaff;
+}
+
+th[colspan] {
+	text-align: center;
+}
+
+tr:nth-child(even) {
+	background: #23272f;
+}
+tr:nth-child(odd) {
+	background: #20232a;
+}
+tr:hover {
+	background: #282c34;
+}
+
+@media (max-width: 900px) {
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+	thead {
+		display: none;
+	}
+	tr {
+		margin-bottom: 1.5em;
+		border-radius: 8px;
+		box-shadow: 0 1px 8px rgba(0,0,0,0.12);
+		background: #23272f;
+		padding: 1em 0.5em;
+	}
+	td {
+		position: relative;
+		padding-left: 50%;
+		border: none;
+		border-bottom: 1px solid #2c313c;
+		min-height: 32px;
+		font-size: 1em;
+	}
+	td:before {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width: 45%;
+		white-space: nowrap;
+		color: #00eaff;
+		font-weight: 600;
+		content: attr(data-label);
+		font-size: 0.95em;
+	}
+}
