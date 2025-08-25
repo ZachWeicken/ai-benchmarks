@@ -19,6 +19,8 @@ To ensure fair and reproducible benchmarks, the following methodology is used:
 - Metrics collected: Time to First Token (TTFT), Tokens Per Second (TPS), and optionally power consumption
 - Any deviations or special configurations are noted in the results
 
+Question: Can you explain the different linux distros to me? 
+
 ## Devices Tested
 For each device, please provide:
 - **Manufacturer/Model**
