@@ -39,7 +39,7 @@
     "vram": "8GB",
     "llm_studio_version": "0.3.23",
     "power_mode": "turbo",
-    "OS": "Windows 11",
+    "OS": "Windows 11 Home (24H2)",
     "benchmarks": [
       {
         "model": "gpt-oss-20b",
