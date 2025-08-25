@@ -12,6 +12,7 @@ h1 {
 	letter-spacing: 1px;
 	font-weight: 600;
 	margin-bottom: 1em;
+	text-align: center;
 }
 
 table {
@@ -46,9 +47,11 @@ th {
 }
 
 tr:nth-child(even) {
+	background: #23272f;
+}
+tr:nth-child(odd) {
 	background: #20232a;
 }
-
 tr:hover {
 	background: #282c34;
 }
