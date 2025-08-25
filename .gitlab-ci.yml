@@ -1,0 +1,9 @@
+# Publish the doc/ folder as your GitLab Pages site
+deploy-pages:
+  stage: deploy
+  script:
+    - echo "Publishing doc/ to GitLab Pages"
+  pages:
+    publish: doc   # <- this makes Pages serve the doc/ directory
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
