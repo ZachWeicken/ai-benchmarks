@@ -60,5 +60,36 @@
         "notes": ""
       }
     ]
+  },
+  {
+    "manufacturer": "HP",
+    "model": "Envy x360 2-in-1 Laptop 16-ac0023dx",
+    "cpu": "Intel Core Ultra 7 155U",
+    "ram": "16GB",
+    "gpu": "Intel Integrated Graphics",
+    "vram": "8.81GB",
+    "llm_studio_version": "0.3.23",
+    "power_mode": "Balanced",
+    "OS": "Windows 11 Home (24H2)",
+    "benchmarks": [
+      {
+        "model": "gpt-oss-20b",
+        "quant": "MXFP4",
+        "size": "11.28GB",
+        "ttft_s": 1.05,
+        "tps": 2.10,
+        "tt":  1932,
+        "notes": ""
+      },
+      {
+        "model": "deepseek-r1-0528-qwen3-8b",
+        "quant": "Q4_K_M",
+        "size": "4.68GB",
+        "ttft_s": 5.25,
+        "tps": 5.19,
+        "tt":  1886,
+        "notes": ""
+      }
+    ]
   }
 ]
