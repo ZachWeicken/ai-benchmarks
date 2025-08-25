@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+
 const results = JSON.parse(fs.readFileSync(path.join(__dirname, '../results.json'), 'utf8'));
 
 let models = [];
@@ -10,20 +11,30 @@ results.forEach(device => {
   });
 });
 
-let table = `<table><caption>Device & Model Performance</caption><thead><tr>
-<th>Manufacturer</th><th>Model</th><th>CPU</th><th>RAM</th><th>GPU</th><th>VRAM</th>`;
+
+let table = `<table><caption>Device & Model Performance</caption><thead>`;
+// First header row
+table += '<tr>';
+table += '<th rowspan="2">Manufacturer</th><th rowspan="2">Model</th><th rowspan="2">CPU</th><th rowspan="2">RAM</th><th rowspan="2">GPU</th><th rowspan="2">VRAM</th>';
 models.forEach(m => {
-  table += `<th>${m} (TTFT/TPS)</th><th>${m} Quant</th><th>${m} Size</th><th>${m} Notes</th>`;
+  table += `<th colspan="3">${m}</th>`;
 });
-table += '</tr></thead><tbody>';
+table += '</tr>';
+// Second header row
+table += '<tr>';
+models.forEach(() => {
+  table += '<th>TTFT/TPS</th><th>Size</th><th>Quantization</th>';
+});
+table += '</tr>';
+table += '</thead><tbody>';
 results.forEach(device => {
   table += `<tr><td>${device.manufacturer}</td><td>${device.model}</td><td>${device.cpu}</td><td>${device.ram}</td><td>${device.gpu}</td><td>${device.vram}</td>`;
   models.forEach(m => {
     let bm = device.benchmarks.find(b => b.model === m);
     if (bm) {
-      table += `<td>${bm.ttft_s} / ${bm.tps}</td><td>${bm.quant}</td><td>${bm.size}</td><td>${bm.notes || ''}</td>`;
+      table += `<td>${bm.ttft_s} / ${bm.tps}</td><td>${bm.size}</td><td>${bm.quant}</td>`;
     } else {
-      table += `<td>-</td><td>-</td><td>-</td><td>-</td>`;
+      table += `<td>-</td><td>-</td><td>-</td>`;
     }
   });
   table += '</tr>';
