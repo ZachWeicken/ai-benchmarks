@@ -70,7 +70,7 @@ Example:
 
 
 ## Contributing
-Feel free to submit new device results or suggest improvements via pull requests.
+Feel free to reach out about getting devices added or sending over results!
 
 ## License
 See `LICENSE.md` for details.
