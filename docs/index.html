@@ -16,7 +16,7 @@
   <h1>AI Benchmarks Results</h1>
   <div id="results-table">Loading results...</div>
   <script>
-    fetch('results.json')
+    fetch('results.json?v=' + Date.now())
       .then(response => response.json())
       .then(data => {
         let models = [];
