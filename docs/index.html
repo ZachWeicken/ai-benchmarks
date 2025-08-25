@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Benchmarks Results</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2em; }
+    table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #f4f4f4; }
+    caption { font-size: 1.2em; margin-bottom: 0.5em; }
+  </style>
+</head>
+<body>
+  <h1>AI Benchmarks Results</h1>
+  <div id="results-table">Loading results...</div>
+  <script>
+    fetch('../results.json')
+      .then(response => response.json())
+      .then(data => {
+        let models = [];
+        data.forEach(device => {
+          device.benchmarks.forEach(b => {
+            if (!models.includes(b.model)) models.push(b.model);
+          });
+        });
+        let table = '<table><caption>Device & Model Performance</caption><thead><tr>' +
+            '<th>Manufacturer</th><th>Model</th><th>CPU</th><th>RAM</th><th>GPU</th><th>VRAM</th>';
+          models.forEach(m => {
+            table += `<th>${m} (TTFT/TPS)</th><th>${m} Quant</th><th>${m} Size</th><th>${m} Notes</th>`;
+          });
+          table += '</tr></thead><tbody>';
+          data.forEach(device => {
+            table += `<tr><td>${device.manufacturer}</td><td>${device.model}</td><td>${device.cpu}</td><td>${device.ram}</td><td>${device.gpu}</td><td>${device.vram}</td>`;
+            models.forEach(m => {
+              let bm = device.benchmarks.find(b => b.model === m);
+              if (bm) {
+                table += `<td>${bm.ttft_s} / ${bm.tps}</td><td>${bm.quant}</td><td>${bm.size}</td><td>${bm.notes || ''}</td>`;
+              } else {
+                table += `<td>-</td><td>-</td><td>-</td><td>-</td>`;
+              }
+            });
+            table += '</tr>';
+        });
+        table += '</tbody></table>';
+        document.getElementById('results-table').innerHTML = table;
+      })
+      .catch(err => {
+        document.getElementById('results-table').innerHTML = 'Failed to load results.';
+      });
+  </script>
+</body>
+</html>

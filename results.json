@@ -1,0 +1,64 @@
+[
+  {
+    "manufacturer": "Microsoft",
+    "model": "Surface Book 2",
+    "cpu": "Intel i7-8650U @ 1.90GHz",
+    "ram": "16GB",
+    "gpu": "NVIDIA GeForce GTX 1060",
+    "vram": "6GB",
+    "llm_studio_version": "0.3.23",
+    "power_mode": "recommended",
+    "OS": "Windows 11 Pro (24H2)",
+    "benchmarks": [
+      {
+        "model": "gpt-oss-20b",
+        "quant": "MXFP4",
+        "size": "11.28GB",
+        "ttft_s": 8.80,
+        "tps": 3.60,
+        "tt": 1600,
+        "notes": ""
+      },
+      {
+        "model": "deepseek-r1-0528-qwen3-8b",
+        "quant": "Q4_K_M",
+        "size": "4.68GB",
+        "ttft_s": 3.13,
+        "tps": 3.18,
+        "tt":  2988,
+        "notes": ""
+      }
+    ]
+  },
+  {
+    "manufacturer": "ASUS",
+    "model": "ROG Ally X",
+    "cpu": "AMD Ryzen Z1 Extreme",
+    "ram": "16GB",
+    "gpu": "AMD Radeon Graphics (RDNA 3)",
+    "vram": "8GB",
+    "llm_studio_version": "0.3.23",
+    "power_mode": "turbo",
+    "OS": "Windows 11",
+    "benchmarks": [
+      {
+        "model": "gpt-oss-20b",
+        "quant": "MXFP4",
+        "size": "11.28GB",
+        "ttft_s": 2.33,
+        "tps": 10.20,
+        "tt":  1418,
+        "notes": ""
+      },
+      {
+        "model": "deepseek-r1-0528-qwen3-8b",
+        "quant": "Q4_K_M",
+        "size": "4.68GB",
+        "ttft_s": 0.64,
+        "tps": 15.36,
+        "tt":  2253,
+        "notes": ""
+      }
+    ]
+  }
+]
