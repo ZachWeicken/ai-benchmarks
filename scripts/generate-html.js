@@ -41,19 +41,14 @@ results.forEach(device => {
 });
 table += '</tbody></table>';
 
+
 const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Benchmarks Results</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 2em; }
-    table { border-collapse: collapse; width: 100%; margin-top: 1em; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { background: #f4f4f4; }
-    caption { font-size: 1.2em; margin-bottom: 0.5em; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>AI Benchmarks Results</h1>
