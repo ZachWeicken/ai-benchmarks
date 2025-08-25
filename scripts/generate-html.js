@@ -55,8 +55,10 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
   <h1>AI Benchmarks Results</h1>
-</div>
-  <div style="max-width: 700px; margin: 2em auto 0 auto; color: #b0b8c1; font-size: 0.98em; text-align: center;">
+  <div id="results-table">
+    ${table}
+  </div>
+  <div style="max-width: 700px; margin: 2em auto 0 auto; color: #b0b8c1; font-size: 0.80em; text-align: center;">
     <strong>TTFT</strong> (Time to First Token) is the time in seconds for the model to generate its first output token.<br>
     <strong>TPS</strong> (Tokens Per Second) is the average speed at which the model generates tokens after the first.
   </div>
